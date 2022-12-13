@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import com.springboot.api.dto.MemberDto;
+
 @Controller
 @RequestMapping("/api/v1/get-api")
 public class GetController {
@@ -34,6 +36,18 @@ public class GetController {
         model.addAttribute("age", age);
 
         return "get-req";
+    }
+
+    // http://localhost:8080/api/v1/get-api/dto?name={ name }&age={ age }&gender={ gender }
+    @GetMapping("/dto")
+    public String getDtoRequestParam(MemberDto memberDto, Model model) {
+
+        model.addAttribute("name", memberDto.getName());
+        model.addAttribute("age", memberDto.getAge());
+        model.addAttribute("gender", memberDto.getGender());
+
+        return "get-dto-req";
+//        return memberDto.toString();
     }
 
 }
