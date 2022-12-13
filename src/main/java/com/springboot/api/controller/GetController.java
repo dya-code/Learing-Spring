@@ -45,9 +45,9 @@ public class GetController {
         model.addAttribute("name", memberDto.getName());
         model.addAttribute("age", memberDto.getAge());
         model.addAttribute("gender", memberDto.getGender());
+        model.addAttribute("variable", memberDto.toString());
 
         return "get-dto-req";
-//        return memberDto.toString();
     }
 
 }

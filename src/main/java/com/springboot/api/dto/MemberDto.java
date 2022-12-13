@@ -32,10 +32,10 @@ public class MemberDto {
 
     @Override
     public String toString() {
-        return "MemberDto{" +
+        return "MemberDto{ " +
                 "name='" + name + '\'' + ", " +
                 "age='" + age + '\'' + ", " +
-                "gender='" + gender + '\'' + ", " +
-                "}";
+                "gender='" + gender + '\'' +
+                " }";
     }
 }
